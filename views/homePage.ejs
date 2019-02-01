@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style/style.css">
+    <link rel="icon" href="./img/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+        crossorigin="anonymous">
+    <title>Airbnb</title>
+</head>
+
+<body>
+
+    <div class="mainpicture">
+        <div class="mainpicture__header">
+            <div class="mainpicture__header--head">
+                <svg viewBox="0 0 1000 1000" role="presentation" aria-hidden="true" focusable="false" style="height:1em;width:1em;display:block;fill:currentColor">
+                    <path d="m499.3 736.7c-51-64-81-120.1-91-168.1-10-39-6-70 11-93 18-27 45-40 80-40s62 13 80 40c17 23 21 54 11 93-11 49-41 105-91 168.1zm362.2 43c-7 47-39 86-83 105-85 37-169.1-22-241.1-102 119.1-149.1 141.1-265.1 90-340.2-30-43-73-64-128.1-64-111 0-172.1 94-148.1 203.1 14 59 51 126.1 110 201.1-37 41-72 70-103 88-24 13-47 21-69 23-101 15-180.1-83-144.1-184.1 5-13 15-37 32-74l1-2c55-120.1 122.1-256.1 199.1-407.2l2-5 22-42c17-31 24-45 51-62 13-8 29-12 47-12 36 0 64 21 76 38 6 9 13 21 22 36l21 41 3 6c77 151.1 144.1 287.1 199.1 407.2l1 1 20 46 12 29c9.2 23.1 11.2 46.1 8.2 70.1zm46-90.1c-7-22-19-48-34-79v-1c-71-151.1-137.1-287.1-200.1-409.2l-4-6c-45-92-77-147.1-170.1-147.1-92 0-131.1 64-171.1 147.1l-3 6c-63 122.1-129.1 258.1-200.1 409.2v2l-21 46c-8 19-12 29-13 32-51 140.1 54 263.1 181.1 263.1 1 0 5 0 10-1h14c66-8 134.1-50 203.1-125.1 69 75 137.1 117.1 203.1 125.1h14c5 1 9 1 10 1 127.1.1 232.1-123 181.1-263.1z"></path>
+                </svg>
+                <div class="mainpicture__header--nav">
+                    <div class="mainpicture__header--nav--link">Becoming a Host</div>
+                    <div class="mainpicture__header--nav--link">Help</div>
+                    <div class="mainpicture__header--nav--link">Sign up</div>
+                    <div class="mainpicture__header--nav--link">Log in</div>
+                </div>
+            </div>
+            <h1 class="mainpicture--resize">Book unique homes and experiences.</h1>
+            <div class="mainpicture__form">
+                <div class="mainpicture__form__position">
+                    <h1>Book unique homes and experiences.</h1>
+                    <form action="">
+                        <div class="mainpicture__form__position--input">
+                            <label for="Where">WHERE</label>
+                            <input type="text" placeholder="Anywhere" id="user-search">
+                        </div>
+                        <div class="mainpicture__form__position--input">
+                            <div class="input--check">
+                                <div class="input--checkin">
+                                    <label for="check_in">CHECK IN</label>
+                                    <input type="date">
+                                </div>
+                                <div class="input--checkout">
+                                    <label for="check_out">CHECK OUT</label>
+                                    <input type="date">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mainpicture__form__position--input">
+                            <label for="guests">GUESTS</label>
+                            <select name="options">
+                                <option value="1">1 guest</option>
+                                <option value="2">2 guests</option>
+                                <option value="3">3 guests</option>
+                            </select>
+                        </div>
+                        <div class="mainpicture__form__position--input">
+                            <input type="submit" value="Search" id="search-btn">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="mainpicture__info">
+                <div class="mainpicture__info--cotent">
+                    <p>Over 300 </p>
+                    <p>unique homes in Oregon</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <form class="container--resize" action="">
+            <div class="mainpicture__form__position--input">
+                <label for="Where">WHERE</label>
+                <input type="text" placeholder="Anywhere">
+            </div>
+            <div class="mainpicture__form__position--input">
+                <div class="input--check">
+                    <div class="input--checkin">
+                        <label for="check_in">CHECK IN</label>
+                        <input type="date">
+                    </div>
+                    <div class="input--checkout">
+                        <label for="check_out">CHECK OUT</label>
+                        <input type="date">
+                    </div>
+                </div>
+            </div>
+            <div class="mainpicture__form__position--input">
+                <label for="guests">GUESTS</label>
+                <select name="options">
+                    <option value="1">1 guest</option>
+                    <option value="2">2 guests</option>
+                    <option value="3">3 guests</option>
+                </select>
+            </div>
+            <div class="mainpicture__form__position--input">
+                <input type="submit" value="Search">
+            </div>
+        </form>
+
+        <div class="container__explore">
+            <h2>Explore Airbnb</h2>
+            <div class="container__explore--box">
+                <div class="container__explore--img">
+                    <img src="https://a0.muscache.com/im/pictures/8b7519ec-2c82-4c09-8233-fd4d2715bbf9.jpg?aki_policy=large"
+                        alt="">
+                    <h3>Homes</h3>
+                </div>
+                <div class="container__explore--img">
+                    <img src="https://a0.muscache.com/im/pictures/cb8b3101-d419-4c17-8e2f-4989b39b98c3.jpg?aki_policy=large"
+                        alt="">
+                    <h3>Experiences</h3>
+                </div>
+                <div class="container__explore--img">
+                    <img src="https://a0.muscache.com/im/pictures/da2d8e97-90b7-409f-94ac-5ab0327c289b.jpg?aki_policy=large"
+                        alt="">
+                    <h3>Restaurants</h3>
+                </div>
+            </div>
+        </div>
+        <div class="container__introducing">
+            <h2>Introducing Airbnb Plus</h2>
+            <span>A new selection of homes verified for quality & comfort</span>
+            <div class="container__introducing--img">
+                <svg viewBox="0 0 470 239" fill="#484848" height="96px" aria-label="Airbnb Plus branding" focusable="false"
+                    width="188.7866108786611px">
+                    <path d="M104.707 148.464c-.512-1.438-1.109-2.83-1.677-4.118a386.734 386.734 0 0 0-2.678-5.889l-.07-.152a1318.773 1318.773 0 0 0-25.22-51.674l-.374-.728c-.9-1.75-1.832-3.56-2.787-5.337-1.116-2.076-2.352-4.275-4.1-6.322-3.766-4.412-8.966-6.842-14.645-6.842s-10.88 2.431-14.648 6.845c-1.746 2.048-2.981 4.245-4.098 6.321a341.749 341.749 0 0 0-2.812 5.387l-.348.676a1319.873 1319.873 0 0 0-25.22 51.673l-.114.25a388.09 388.09 0 0 0-2.632 5.791c-.569 1.288-1.166 2.678-1.678 4.12-1.497 4.213-1.941 8.24-1.359 12.308 1.219 8.513 6.924 15.809 14.89 19.041a24.699 24.699 0 0 0 9.335 1.81c.995 0 2.007-.06 3.007-.176 3.833-.445 7.695-1.75 11.48-3.88 4.629-2.606 9.202-6.425 14.197-11.883 4.996 5.458 9.569 9.277 14.199 11.883 3.784 2.13 7.646 3.435 11.478 3.88 1 .116 2.013.175 3.008.175a24.69 24.69 0 0 0 9.334-1.809c7.965-3.231 13.671-10.528 14.891-19.041.582-4.067.137-8.093-1.36-12.31zm-51.55 6.352c-6.213-7.89-10.2-15.216-11.599-21.358-.587-2.578-.721-4.947-.398-7.041.278-1.812.9-3.431 1.848-4.815 2.145-3.127 5.938-4.994 10.15-4.994 4.209 0 8.002 1.867 10.147 4.996.949 1.383 1.57 3.003 1.849 4.815.322 2.097.187 4.466-.4 7.044-1.401 6.141-5.387 13.465-11.598 21.353zm45.897 5.35a17.098 17.098 0 0 1-10.46 13.375c-2.745 1.114-5.746 1.506-8.796 1.153-2.919-.34-5.792-1.322-8.783-3.005-4.14-2.33-8.331-5.908-13.048-11.157 7.508-9.275 12.197-17.824 13.933-25.439.794-3.481.962-6.774.5-9.788-.448-2.908-1.474-5.548-3.05-7.846-3.511-5.123-9.565-8.182-16.195-8.182-6.627 0-12.68 3.058-16.192 8.18-1.576 2.298-2.601 4.938-3.048 7.845-.464 3.01-.297 6.302.496 9.784 1.735 7.618 6.424 16.169 13.934 25.447-4.716 5.248-8.907 8.825-13.048 11.156-2.99 1.683-5.863 2.666-8.782 3.005-3.049.353-6.052-.039-8.797-1.153a17.095 17.095 0 0 1-10.46-13.376c-.418-2.923-.095-5.742 1.018-8.872.41-1.154.889-2.286 1.483-3.632.84-1.903 1.732-3.838 2.595-5.709l.116-.251a1318.605 1318.605 0 0 1 25.196-51.625l.35-.682a336.93 336.93 0 0 1 2.765-5.295c.972-1.808 1.95-3.555 3.236-5.063 2.403-2.815 5.563-4.303 9.14-4.303 3.575 0 6.734 1.487 9.137 4.302 1.287 1.508 2.265 3.255 3.236 5.061a333.39 333.39 0 0 1 2.74 5.247l.377.734a1317.39 1317.39 0 0 1 25.196 51.625l.071.155a379.704 379.704 0 0 1 2.64 5.805c.595 1.347 1.075 2.48 1.484 3.63 1.111 3.132 1.434 5.951 1.016 8.873zm194.117-43.622c0-33.068 4.234-63.313 11.695-83.88 5.04-14.316 11.492-25.002 19.961-25.002 7.46 0 11.694 8.67 11.694 22.583 0 17.744-6.049 38.713-15.928 59.482-7.26 15.323-16.736 30.244-27.02 43.754-.2-5.242-.402-10.888-.402-16.937zm-43.352 65.732c12.704-7.057 25.608-17.946 37.504-31.252 3.63 22.985 11.292 30.446 20.365 30.446 10.082 0 19.76-9.276 28.229-26.01v3.225c0 17.34 7.863 22.785 14.92 22.785 10.485 0 20.769-11.695 29.036-30.85-.202 3.428-.202 5.04-.202 7.259 0 17.542 6.452 22.784 13.912 22.784 6.856 0 12.502-4.84 18.55-14.921 1.412-2.419-.402-5.646-3.225-5.646-1.412 0-2.823.807-3.428 2.017-3.63 6.452-7.057 10.888-11.291 10.888-5.848 0-6.452-8.47-6.452-15.122 0-9.679 1.225-25.472 3.024-34.883.48-2.515-1.412-4.637-3.831-4.637-2.017 0-3.63 1.41-4.033 3.024-7.662 27.826-19.558 52.425-30.85 52.425-5.645 0-8.065-6.654-8.065-15.324 0-9.88 2.017-21.777 5.645-35.085.606-2.42-1.209-4.839-3.83-4.839-1.613 0-3.428 1.009-3.832 2.621-9.072 30.245-21.776 52.627-33.269 52.627-8.267 0-12.5-11.292-14.315-29.237 13.105-15.526 24.8-33.471 33.47-51.619 10.284-21.977 16.736-44.157 16.736-62.707C344.587 6.654 334.505 0 325.23 0c-10.888 0-20.97 10.283-28.027 29.842-7.46 21.373-12.098 52.424-12.098 86.702 0 9.275.404 17.34 1.008 24.397-12.5 14.316-26.212 26.616-39.923 34.48-1.814 1.008-2.62 3.428-1.613 5.242 1.008 1.815 3.427 2.621 5.242 1.613zm-68.353 56.054c2.218 0 4.235-1.815 4.235-4.033 0-17.743.806-35.487 2.62-52.827 36.698-3.226 78.839-38.31 78.839-74.806 0-25.204-18.147-39.52-42.141-39.52-23.39 0-53.03 14.719-77.63 39.117-1.612 1.41-1.612 4.032 0 5.645 1.413 1.613 4.034 1.613 5.647 0 22.986-22.38 50.207-36.697 71.781-36.697 19.357 0 33.874 11.493 33.874 31.455 0 32.26-36.899 63.11-69.563 66.539 3.024-25.608 7.864-50.408 14.518-72.185.604-2.016-.807-4.436-2.823-5.042-2.218-.603-4.637.606-5.243 2.622-6.654 22.583-11.694 48.19-14.921 75.008-7.863-.403-14.719-2.42-22.38-6.855-2.017-1.009-4.436-.202-5.647 1.613-1.008 2.016-.2 4.436 1.614 5.645 9.073 4.637 16.937 7.057 25.607 7.662-1.613 17.34-2.622 35.084-2.622 52.626 0 2.218 2.017 4.033 4.235 4.033zm274.22-110.697c1.614 1.21 4.235 1.008 5.444-.604 5.444-6.855 8.671-14.115 8.671-20.365 0-9.275-6.251-15.122-17.743-15.122-22.18 0-43.554 22.582-43.554 39.923 0 11.09 7.662 18.55 22.987 21.373l9.476 1.613c9.88 1.613 16.534 5.04 16.534 11.896 0 7.461-8.267 11.493-16.937 11.493-6.452 0-12.099-2.218-16.534-5.242-1.613-1.21-4.032-.807-5.242.806s-.807 4.033.806 5.242c5.646 4.235 12.905 6.856 20.97 6.856 14.315 0 25.003-8.065 25.003-19.558 0-9.275-7.058-16.333-23.39-19.155l-9.477-1.614c-9.678-1.613-16.13-5.846-16.13-13.912 0-13.913 17.744-32.06 35.285-32.06 6.05 0 9.88 2.622 9.88 8.066 0 4.234-2.42 9.679-6.653 14.92-1.21 1.614-1.009 4.033.604 5.444z"></path>
+                </svg>
+                <button>EXPLORE HOMES ></button>
+            </div>
+        </div>
+        <div class="container__recomendation">
+            <h2>Recommended for you</h2>
+            <div class="mobile-scroll">
+                <div class="container__recomendation--post">
+                    <div class="container__recomendation--post--img" style="background: url(https://a0.muscache.com/im/pictures/998b4270-25d7-4850-8ccf-4350b9a5ab05.jpg?aki_policy=large) center no-repeat;      width: 180px; background-size: cover">
+                        <h4>Paris</h4>
+                        <span>€91/night average</span>
+                    </div>
+                    <div class="container__recomendation--post--img" style="background: url(https://a0.muscache.com/im/pictures/60145c65-7c36-4ac5-8129-6ae9a0d27a81.jpg?aki_policy=large) center no-repeat;      width: 180px; background-size: cover">
+                        <h4>Tokyo</h4>
+                        <span>€73/night average</span>
+                    </div>
+                    <div class="container__recomendation--post--img" style="background: url(https://a0.muscache.com/im/pictures/6729455e-af21-4dc3-bfdf-332393d407a8.jpg?aki_policy=large) center no-repeat;      width: 180px; background-size: cover">
+                        <h4>London</h4>
+                        <span>€105/night average</span>
+                    </div>
+                    <div class="container__recomendation--post--img" style="background: url(https://a0.muscache.com/im/pictures/82af5bc4-ed5b-44d9-9209-ac0f2fbf8986.jpg?aki_policy=large) center no-repeat;      width: 180px; background-size: cover">
+                        <h4>Los Angeles</h4>
+                        <span>€110/night average</span>
+                    </div>
+                    <div class="container__recomendation--post--img" style="background: url(https://a0.muscache.com/im/pictures/6db93b37-3d4b-49c0-af00-c184a9dd6305.jpg?aki_policy=large) center no-repeat;      width: 180px; background-size: cover">
+                        <h4>Barcelona</h4>
+                        <span>€69/night average</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container__rate">
+            <div class="container__rate--head">
+                <h2>Top-rated experiences</h2>
+                <span>Highly reviewed by locals and travelers worldwide</span>
+            </div>
+            <div class="container__rate__grid">
+                <div class="container__rate__grid--content">
+                    <img src="https://a0.muscache.com/im/pictures/632e48f7-3e9f-4d47-860e-08d8a902653d.jpg?aki_policy=large"
+                        alt="">
+                    <div class="container__rate__grid--content--text">
+                        <h6>bike ride · Bangkok</h6>
+                        <h4>Cycle and Snack through hidden Bangkok</h4>
+                        <span>€41 per person</span>
+                        <div class="container__rate__grid--content--text--rate">
+                            <span class="rate">4.99</span>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>202</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="container__rate__grid--content">
+                    <img src="https://a0.muscache.com/im/pictures/e21bf2f4-7b01-4175-a76a-b72b9d047173.jpg?aki_policy=large"
+                        alt="">
+                    <div class="container__rate__grid--content--text">
+                        <h6>boat ride · Gangneung-si</h6>
+                        <h4>Yacht along the coast with a captain</h4>
+                        <span>€40 per person</span>
+                        <div class="container__rate__grid--content--text--rate">
+                            <span class="rate">4.97</span>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>70</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="container__rate__grid--content">
+                    <img src="https://a0.muscache.com/im/pictures/a7e59c75-a34d-4964-81e4-894e9b6afa66.jpg?aki_policy=large"
+                        alt="">
+                    <div class="container__rate__grid--content--text">
+                        <h6>animal encounter · Anacortes</h6>
+                        <h4>Wolf Encounter</h4>
+                        <span>€156 per person</span>
+                        <div class="container__rate__grid--content--text--rate">
+                            <span class="rate">4.95</span>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>1371</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="container__rate__grid--content">
+                    <img src="https://a0.muscache.com/im/pictures/79335a79-379b-444b-8d52-251e89b378b9.jpg?aki_policy=large"
+                        alt="">
+                    <div class="container__rate__grid--content--text">
+                        <h6>wildlife spotting · San Ramon</h6>
+                        <h4>Experience with a Sloth</h4>
+                        <span>€18 per person</span>
+                        <div class="container__rate__grid--content--text--rate">
+                            <span class="rate">4.97</span>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>208</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="container__rate__grid--content">
+                    <img src="https://a0.muscache.com/im/pictures/571e0e7b-6867-4c44-bd91-776a5d698fae.jpg?aki_policy=large"
+                        alt="">
+                    <div class="container__rate__grid--content--text">
+                        <h6>history walk · Paris</h6>
+                        <h4>Paris' Best Kept Secrets Tour</h4>
+                        <span>€49 per person</span>
+                        <div class="container__rate__grid--content--text--rate">
+                            <span class="rate">4.95</span>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>1821</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="container__rate__grid--content">
+                    <img src="https://a0.muscache.com/im/pictures/b11a5248-93c2-4a56-b8f4-b37c2fd2371c.jpg?aki_policy=large"
+                        alt="">
+                    <div class="container__rate__grid--content--text">
+                        <h6>workshop · Seattle</h6>
+                        <h4>Forge a knife from a horseshoe</h4>
+                        <span>€72 per person</span>
+                        <div class="container__rate__grid--content--text--rate">
+                            <span class="rate">4.98</span>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>320</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="container__rate__grid--content">
+                    <img src="https://a0.muscache.com/im/pictures/10eccf04-9d46-4d9d-8380-1f6b6080f7b6.jpg?aki_policy=large"
+                        alt="">
+                    <div class="container__rate__grid--content--text">
+                        <h6>workshop · Kyoto</h6>
+                        <h4>Explore & Make Miniature Food in Kyoto</h4>
+                        <span>€44 per person</span>
+                        <div class="container__rate__grid--content--text--rate">
+                            <span class="rate">4.97</span>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>67</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="container__rate__grid--content">
+                    <img src="https://a0.muscache.com/im/pictures/830b2a71-a4de-416c-a435-9f3faaf8fbd3.jpg?aki_policy=large"
+                        alt="">
+                    <div class="container__rate__grid--content--text">
+                        <h6>paragliding · Yangpyeong-gun</h6>
+                        <h4>Go paragliding with a pilot</h4>
+                        <span>€111 per person</span>
+                        <div class="container__rate__grid--content--text--rate">
+                            <span class="rate">4.95</span>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>147</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="show-all">
+            <span>Show all experiences</span>
+            <i class="fas fa-angle-right"></i>
+        </div>
+        <div class="container__footer">
+            <div class="container__footer--title">
+                <h2>Homes for your kind of trip</h2>
+                <span>Find a top-rated home with amenities you need</span>
+            </div>
+            <div class="mobile-scroll">
+                <div class="container__footer--posts">
+                    <div class="container__footer--post">
+                        <img src="https://a0.muscache.com/pictures/f759fb5d-0fd7-4f80-b1a2-23a1915298f4.jpg" alt="">
+                        <h5>2,000+ Homes</h5>
+                        <span>Find a home that families love. Stretch out and enjoy a space of your own.</span>
+                    </div>
+                    <div class="container__footer--post">
+                        <img src="https://a0.muscache.com/pictures/f8539f57-e950-4d82-a834-97bcf9239b1c.jpg" alt="">
+                        <h5>2,000+ Homes</h5>
+                        <span>Book a top-rated home that offers reservation flexibility and work-trip essentials.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+<!-- JQUERY -->
+<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous"></script>
+
+<script>
+    $('.container__explore--img').on('click', () => {
+        window.location.href = '/houses';
+    })
+
+    $('#search-btn').on('click', (e) => {
+        e.preventDefault();
+        let userSearch = $('#user-search').val();
+
+        window.location.href = '/s/' + userSearch + '/all';
+
+        // $.ajax({
+        //     type: 'GET',
+        //     url: '/s/' + userSearch,
+        //     dataType: "json",
+        //     success: (data) => {
+                
+        //     }
+        // });
+    })
+
+</script>
+
+</html>
