@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="/style/style.css">
     <link rel="icon" href="./img/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
         crossorigin="anonymous">
@@ -34,7 +34,7 @@
                     <form action="">
                         <div class="mainpicture__form__position--input">
                             <label for="Where">WHERE</label>
-                            <input type="text" placeholder="Anywhere">
+                            <input type="text" placeholder="Anywhere" id="user-search">
                         </div>
                         <div class="mainpicture__form__position--input">
                             <div class="input--check">
@@ -57,7 +57,7 @@
                             </select>
                         </div>
                         <div class="mainpicture__form__position--input">
-                            <input type="submit" value="Search">
+                            <input type="submit" value="Search" id="search-btn">
                         </div>
                     </form>
                 </div>
@@ -349,6 +349,22 @@
 <script>
     $('.container__explore--img').on('click', () => {
         window.location.href = '/houses';
+    })
+
+    $('#search-btn').on('click', (e) => {
+        e.preventDefault();
+        let userSearch = $('#user-search').val();
+
+        window.location.href = '/s/' + userSearch + '/all';
+
+        // $.ajax({
+        //     type: 'GET',
+        //     url: '/s/' + userSearch,
+        //     dataType: "json",
+        //     success: (data) => {
+                
+        //     }
+        // });
     })
 
 </script>
