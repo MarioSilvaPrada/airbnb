@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style/style.css">
+    <link rel="icon" href="./img/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+        crossorigin="anonymous">
+    <title>Airbnb</title>
+</head>
+
+<body>
+
+    <div class="container">
+        
+        <div class="container__rate">
+            <div class="container__rate--head">
+                <h2>Top-rated experiences</h2>
+                <span>Highly reviewed by locals and travelers worldwide</span>
+            </div>
+            <div class="container__rate__grid">
+                <% data.forEach(function(item) { %>
+                <div class="container__rate__grid--content">
+                    <img src='<%=item.url %>' alt="">
+                    <div class="container__rate__grid--content--text">
+                        <h6>VERIFIED · ENTIRE APARTMENT</h6>
+                        <h4>
+                            <%= item.title %>
+                        </h4>
+                        <span>
+                            <%= item.price %> per person</span>
+                        <div class="container__rate__grid--content--text--rate">
+                            <span class="rate">4.99</span>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>202</span>
+                        </div>
+                    </div>
+                </div>
+                <% }); %>
+            </div>
+        </div>
+        <div class="show-all">
+            <span>Show all experiences</span>
+            <i class="fas fa-angle-right"></i>
+        </div>
+    </div>
+
+
+</body>
+
+
+<!-- JQUERY -->
+<script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous"></script>
+
+<script>
+
+
+</script>
+
+</html>

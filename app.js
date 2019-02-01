@@ -31,9 +31,6 @@ app.get('/', function (req, res) {
     res.render('homePage');
 });
 
-// app.get('/houses', function(req, res) {
-//     res.render('house-search');
-// });
 
 app.get('/s/:location/all', function (req, res) {
     let location = req.params.location;
@@ -44,8 +41,10 @@ app.get('/s/:location/all', function (req, res) {
     res.render('search', { location: location, data: rome });
 });
 
-// app.get('/houses', function(req, res) {
-//     res.render('search');
-// });
+app.get('/s/:location/homes', function(req, res) {
+    let location = req.params.location;
+    
+    res.render('homes', { location: location, data: rome });
+});
 
 app.listen(3000);
