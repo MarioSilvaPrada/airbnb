@@ -1,0 +1,20 @@
+<% include partials/header.ejs %>
+
+    <form action="/test2" method="POST" id='user_form'>
+
+        <label for="city">City</label>
+        <input type="text" name="city"> <br>
+        <label for="beds_quantity">Number of beds</label>
+        <input type="number" name="quantity" min="0" max="10"> <br>
+        <label for="img_url">URL:</label>
+        <input type="url" name="url"> <br>
+        <label for="price">Price:</label>
+        <input type="number" name="price"> <br>
+        <label for="title">Title</label>
+        <input type="text" name="title"> <br>
+        <input type="submit">
+
+    </form>
+    <% include partials/footer.ejs %>
+    
+</html>
