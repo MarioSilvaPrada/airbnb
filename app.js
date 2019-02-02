@@ -29,10 +29,13 @@ const rome = [
     }
 ]
 
+// HOME PAGE
+
 app.get('/', function (req, res) {
-    res.render('homePage');
+    res.render('homePage', {navbar: 'mainpicture__header--head'});
 });
 
+// LOCATION PAGE
 
 app.get('/s/:location/all', function (req, res) {
     let location = req.params.location;
@@ -40,19 +43,24 @@ app.get('/s/:location/all', function (req, res) {
     if (location.toLowerCase() !== 'rome') {
         res.send('We found no results for that query');
     }
-    res.render('search', { location: location, data: rome });
+    res.render('search', { location: location, data: rome, navbar: 'white_navbar' });
 });
+
+// HOMES PAGE 
 
 app.get('/s/:location/homes', function(req, res) {
     let location = req.params.location;
     
-    res.render('homes', { location: location, data: rome });
+    res.render('homes', { location: location, data: rome, navbar: 'white_navbar' });
 });
 
+// FORM PAGE
+// GET
 app.get('/test', function(req, res) {
     res.render('new_home');
 });
 
+// POST
 app.post('/test2', function(req, res) {
     let data = req.body;
     console.log(data);
