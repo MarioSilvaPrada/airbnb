@@ -525,3 +525,7 @@ svg {
 
 
 /* .grid .grid--content:nth-last-of-type(1), {display: none */
+
+    #user_form {
+        border: 2px solid red;
+    }
