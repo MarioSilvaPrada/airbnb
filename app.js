@@ -9,7 +9,7 @@ app.set('view engine', 'ejs');
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded());
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/airbnbV5');
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/airbnbV6');
 
 mongoose.connection.once('open', function () {
     console.log('Connection has been made...');
@@ -45,8 +45,7 @@ let rome = new Location({
     houses: romeArr
 })
 
-rome.save();
-console.log(rome['houses'])
+rome.save()
 
 
 // HOME PAGE
