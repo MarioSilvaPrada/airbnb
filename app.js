@@ -82,10 +82,6 @@ app.get('/', function (req, res) {
 app.get('/s/:location/all', function (req, res) {
     let location = req.params.location;
 
-    if (location.toLowerCase() !== 'rome') {
-        res.send('We found no results for that query');
-    }
-
     Location.findOne({ name: location }).populate('houses').then((result) => {
         console.log(result)
         res.render('search', { location: location, data: result['houses'], navbar: 'white_navbar' });
