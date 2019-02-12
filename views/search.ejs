@@ -96,7 +96,9 @@
         <div class="container__rate__grid">
             <% data.forEach(function(item) { %>
             <div class="container__rate__grid--content">
-                <img src='<%=item.main_image %>' alt="">
+                <a href="/rooms/<%=item._id%>">
+                    <img src='<%=item.main_image %>' alt="">
+                </a>
                 <div class="container__rate__grid--content--text">
                     <h6>VERIFIED · ENTIRE APARTMENT</h6>
                     <h4>
@@ -152,6 +154,13 @@
     $('.container__explore--img').on('click', (e) => {
         window.location.href = 'homes';
     })
+
+
+    $('.container__rate__grid--content').on('click', () => {
+        console.log('click')
+    })
+
+
 
 </script>
 
