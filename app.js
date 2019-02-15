@@ -57,7 +57,7 @@ let locationHouse = new Location({
 });
 
 romeArr.forEach((home, i) => {
-    
+
     new Home(home).save().then((result) => {
         locationHouse.houses.push(result)
 
@@ -65,39 +65,40 @@ romeArr.forEach((home, i) => {
             locationHouse.save()
         }
     })
-    
+
 })
 
 */
 
-
 // HOME PAGE
 
-app.get('/', function (req, res) {
-    res.render('homePage', { navbar: 'mainpicture__header--head' });
+app.get('/',  (req, res) => {
+    res.render('homePage', { navbar: 'mainpicture__header--head',style: 'style.css' });
 });
 
-// LOCATION PAGE
+// LOCATION PAGE - all page
 
 app.get('/s/:location/all', function (req, res) {
     let location = req.params.location;
 
     Location.findOne({ name: location }).populate('houses').then((result) => {
-        console.log(result)
-        res.render('search', { location: location, data: result['houses'], navbar: 'white_navbar' });
+
+        res.render('search', { location: location, data: result['houses'], navbar: 'white_navbar', style: 'style.css' });
     });
 });
 
-// HOMES PAGE 
+
+// HOUSES PAGE - homes page
 
 app.get('/s/:location/homes', function (req, res) {
     let location = req.params.location;
 
     Location.findOne({ name: location }).populate('houses').then((result) => {
-        console.log(result)
-        res.render('homes', { location: location, data: result['houses'], navbar: 'white_navbar' });
+
+        res.render('homes', { location: location, data: result['houses'], navbar: 'white_navbar', style: 'style.css' });
     });
 });
+
 
 // FORM PAGE
 // GET
@@ -124,10 +125,20 @@ app.post('/:location/homes/', function (req, res) {
             .then(result => {
                 location.houses.push(result);
                 location.save();
-            })        
+            })
     })
 
     res.redirect('/');
 });
+
+app.get('/rooms/:id', (req, res) => {
+    let id = req.params.id;
+
+    Home.findById(id).then((result) => {
+        console.log(result);
+        console.log(id)
+        res.render('home', { navbar: 'white_navbar',data: result, style: 'home-style.css' })
+    })
+})
 
 app.listen(process.env.PORT || 3000, process.env.IP);
