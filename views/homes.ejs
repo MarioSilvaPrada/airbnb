@@ -2,45 +2,47 @@
 
 <% include partials/navbar.ejs %>
 
-    <div class="container">
+<div class="container">
 
-        <div class="container__rate">
-            <div class="container__rate--head">
-                <h2>Top-rated experiences</h2>
-                <span>Highly reviewed by locals and travelers worldwide</span>
-            </div>
-            <div class="container__rate__grid">
-                <% data.forEach(function(item) { %>
-                <div class="container__rate__grid--content">
+    <div class="container__rate">
+        <div class="container__rate--head">
+            <h2>Top-rated experiences</h2>
+            <span>Highly reviewed by locals and travelers worldwide</span>
+        </div>
+        <div class="container__rate__grid">
+            <% data.forEach(function(item) { %>
+            <div class="container__rate__grid--content">
+                <a href="/rooms/<%=item._id%>">
                     <img src='<%=item.main_image %>' alt="">
-                    <div class="container__rate__grid--content--text">
-                        <h6>VERIFIED · ENTIRE APARTMENT</h6>
-                        <h4>
-                            <%= item.title %>
-                        </h4>
-                        <span>
-                            <%= item.price %>€ per person</span>
-                        <div class="container__rate__grid--content--text--rate">
-                            <span class="rate">4.99</span>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <span>202</span>
-                        </div>
+                </a>
+                <div class="container__rate__grid--content--text">
+                    <h6>VERIFIED · ENTIRE APARTMENT</h6>
+                    <h4>
+                        <%= item.title %>
+                    </h4>
+                    <span>
+                        <%= item.price %>€ per person</span>
+                    <div class="container__rate__grid--content--text--rate">
+                        <span class="rate">4.99</span>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span>202</span>
                     </div>
                 </div>
-                <% }); %>
             </div>
-        </div>
-        <div class="show-all">
-            <span>Show all experiences</span>
-            <i class="fas fa-angle-right"></i>
+            <% }); %>
         </div>
     </div>
+    <div class="show-all">
+        <span>Show all experiences</span>
+        <i class="fas fa-angle-right"></i>
+    </div>
+</div>
 
 
-    <% include partials/footer.ejs %>
+<% include partials/footer.ejs %>
 
 </html>
