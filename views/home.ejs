@@ -1,14 +1,14 @@
 <% include partials/header.ejs %>
 
 <% include partials/navbar.ejs %>
-<img src="https://a0.muscache.com/im/pictures/11341171/d5ca49b5_original.jpg?aki_policy=xx_large" alt="casa" class="location-img">
+<img src="<%=data.main_image%>" alt="casa" class="location-img">
 
 <div class="container">
     <div class="container-main">
         <div class="container-main--head">
             <div class="content">
                 <span class="title">Apartamento Inteiro</span>
-                <span class="description">Pettinarihome Campo de FIORI</span>
+                <span class="description"><%=data.name%></span>
                 <span class="city">Roma</span>
             </div>
             <div class="user-image">
@@ -30,7 +30,7 @@
     <div class="container-aside">
         <div class="check-room">
             <div class="house-info">
-                <h3>95€</h3>
+                <h3><%=data.price%> €</h3>
                 <span>per night</span>
             </div>
             <form action="">

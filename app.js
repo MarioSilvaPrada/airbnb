@@ -132,11 +132,12 @@ app.post('/:location/homes/', function (req, res) {
 });
 
 app.get('/rooms/:id', (req, res) => {
-    let id = req.params.id.toString();
+    let id = req.params.id;
 
-    Location.findById(id).populate('houses').then((result) => {
-        console.log(result)
-        res.render('home', { navbar: 'white_navbar', style: 'home-style.css' })
+    Home.findById(id).then((result) => {
+        console.log(result);
+        console.log(id)
+        res.render('home', { navbar: 'white_navbar',data: result, style: 'home-style.css' })
     })
 })
 
