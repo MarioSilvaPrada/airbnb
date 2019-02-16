@@ -51,7 +51,7 @@ const romeArr = [
         'beds': 3
     }
 ];
-/*
+
 let locationHouse = new Location({
     name: 'rome',
     houses: []
@@ -69,7 +69,7 @@ romeArr.forEach((home, i) => {
 
 })
 
-*/
+
 
 app.use(generalPagesRoutes);
 
