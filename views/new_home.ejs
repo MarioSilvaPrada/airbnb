@@ -1,20 +1,31 @@
 <% include partials/header.ejs %>
 
-    <form action="/<%= location %>/homes" method="POST" id='user_form'>
+<form action="/<%= location %>/homes" method="POST" id='user_form'>
 
+    <div>
         <label for="city">City</label>
         <input type="text" name="city"> <br>
+    </div>
+    <div>
         <label for="beds_quantity">Number of beds</label>
         <input type="number" name="beds" min="0" max="10"> <br>
+    </div>
+    <div>
         <label for="img_url">URL:</label>
         <input type="url" name="url"> <br>
+    </div>
+    <div>
         <label for="price">Price:</label>
         <input type="number" name="price"> <br>
+    </div>
+    <div>
         <label for="title">Title</label>
         <input type="text" name="title"> <br>
-        <input type="submit">
+    </div>
 
-    </form>
-    <% include partials/footer.ejs %>
-    
+    <input type="submit">
+
+</form>
+<% include partials/footer.ejs %>
+
 </html>
