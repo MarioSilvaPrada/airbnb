@@ -584,13 +584,13 @@ svg {
     flex-direction: column;
 }
 
-.user-image {
+/* .user-image {
     border: 2px solid black;
     width: 60px;
     height: 60px;
     border-radius: 100%;
     align-self: center;
-}
+} */
 
 .content {
     color:#484848;
@@ -637,14 +637,25 @@ svg {
     display: flex;
     align-items: center;
     color:rgb(72, 72, 72);
+
 }
 
 .house-info h3 {
     font-size: 22px;
+    margin-bottom: 5px;
 }
 
 .house-info span {
     font-size: 12px;
     margin-left: 6px;
     font-weight: bold;
+    margin-bottom: 0;
+    margin-left: 12px;
+}
+
+.rating {
+    font-size: 11px;
+    color: rgb(0, 132, 137);
+
+
 }

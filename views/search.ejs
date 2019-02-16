@@ -107,12 +107,10 @@
                     <span>
                         <%= item.price %>€ per person</span>
                     <div class="container__rate__grid--content--text--rate">
-                        <span class="rate">4.99</span>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                        <span class="rate"><%= item.rating %></span>
+                        <% for (let i= 0; i < item.rating; i++) { %>
+                            <i class="fas fa-star"></i>
+                        <% } %>
                         <span>202</span>
                     </div>
                 </div>

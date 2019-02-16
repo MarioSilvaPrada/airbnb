@@ -3,8 +3,9 @@ let app = express();
 let bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
-const Location = require('./models/location');
-const Home = require('./models/home');
+const generalPagesRoutes = require('./routes/generalPages');
+const locationRoutes = require('./routes/location');
+const homeRoutes = require('./routes/home');
 
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
@@ -70,75 +71,11 @@ romeArr.forEach((home, i) => {
 
 */
 
-// HOME PAGE
+app.use(generalPagesRoutes);
 
-app.get('/',  (req, res) => {
-    res.render('homePage', { navbar: 'mainpicture__header--head',style: 'style.css' });
-});
+app.use(locationRoutes);
 
-// LOCATION PAGE - all page
+app.use(homeRoutes);
 
-app.get('/s/:location/all', function (req, res) {
-    let location = req.params.location;
-
-    Location.findOne({ name: location }).populate('houses').then((result) => {
-
-        res.render('search', { location: location, data: result['houses'], navbar: 'white_navbar', style: 'style.css' });
-    });
-});
-
-
-// HOUSES PAGE - homes page
-
-app.get('/s/:location/homes', function (req, res) {
-    let location = req.params.location;
-
-    Location.findOne({ name: location }).populate('houses').then((result) => {
-
-        res.render('homes', { location: location, data: result['houses'], navbar: 'white_navbar', style: 'style.css' });
-    });
-});
-
-
-// FORM PAGE
-// GET
-app.get('/:location/homes/new', function (req, res) {
-    let location = req.params.location;
-    res.render('new_home', { location: location });
-});
-
-// POST
-app.post('/:location/homes/', function (req, res) {
-    let data = req.body;
-    let loc = req.params.location;
-
-    Location.findOne({ name: loc }).then((location) => {
-        let home = new Home({
-            name: data.title,
-            beds: data.beds,
-            price: data.price,
-            rating: 5,
-            main_image: data.url
-        })
-
-        home.save()
-            .then(result => {
-                location.houses.push(result);
-                location.save();
-            })
-    })
-
-    res.redirect('/');
-});
-
-app.get('/rooms/:id', (req, res) => {
-    let id = req.params.id;
-
-    Home.findById(id).then((result) => {
-        console.log(result);
-        console.log(id)
-        res.render('home', { navbar: 'white_navbar',data: result, style: 'home-style.css' })
-    })
-})
 
 app.listen(process.env.PORT || 3000, process.env.IP);
