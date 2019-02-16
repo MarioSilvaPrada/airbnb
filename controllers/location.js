@@ -15,13 +15,14 @@ const renderLocation = (req, res) => {
 
 const getLocation = (req, res) => {
     let location = req.params.location;
-    res.render('new_home', { location: location, style: 'style.css' });
+    res.render('new_home', { location: location, style: 'form-style.css' });
 }
 
 const postLocation = async (req, res) => {
     let data = req.body;
     let loc = req.params.location;
 
+    // POST
     let home = await db.postToDB('home', new Home({
         name: data.title,
         beds: data.beds,
@@ -30,6 +31,7 @@ const postLocation = async (req, res) => {
         main_image: data.url
     }));
 
+    // GET
     let location = await db.getFromDB('location', { name: loc });
 
     location[0].houses.push(home);
@@ -37,7 +39,6 @@ const postLocation = async (req, res) => {
     location[0].save();
 
     res.redirect('/');
-
 
 }
 

@@ -547,15 +547,12 @@ svg {
 
 /* .grid .grid--content:nth-last-of-type(1), {display: none */
 
-    #user_form {
-        border: 2px solid red;
-    }
-
 
 /* Houses Page */
 
 .location-img {
-    width: 50%
+    width: 50%;
+    margin-top: 15px;
 }
 
 .container {
