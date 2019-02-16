@@ -1,5 +1,9 @@
 const Location = require('../models/location');
 
+const db = require('../utilities/db/db');
+
+const Home = require('../models/home');
+
 const renderLocation = (req, res) => {
     let location = req.params.location;
 
@@ -11,30 +15,30 @@ const renderLocation = (req, res) => {
 
 const getLocation = (req, res) => {
     let location = req.params.location;
-    res.render('new_home', { location: location });
+    res.render('new_home', { location: location, style: 'style.css' });
 }
 
-const postLocation = (req, res) => {
+const postLocation = async (req, res) => {
     let data = req.body;
     let loc = req.params.location;
 
-    Location.findOne({ name: loc }).then((location) => {
-        let home = new Home({
-            name: data.title,
-            beds: data.beds,
-            price: data.price,
-            rating: 5,
-            main_image: data.url
-        })
+    let home = await db.postToDB('home', new Home({
+        name: data.title,
+        beds: data.beds,
+        price: data.price,
+        rating: 5,
+        main_image: data.url
+    }));
 
-        home.save()
-            .then(result => {
-                location.houses.push(result);
-                location.save();
-            })
-    })
+    let location = await db.getFromDB('location', { name: loc });
+
+    location[0].houses.push(home);
+
+    location[0].save();
 
     res.redirect('/');
+
+
 }
 
 module.exports = {
