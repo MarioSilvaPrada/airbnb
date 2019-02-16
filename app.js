@@ -3,6 +3,8 @@ let app = express();
 let bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
+const Home = require('./models/home');
+
 const generalPagesRoutes = require('./routes/generalPages');
 const locationRoutes = require('./routes/location');
 const homeRoutes = require('./routes/home');
