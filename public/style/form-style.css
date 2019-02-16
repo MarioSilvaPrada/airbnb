@@ -1,0 +1,55 @@
+@font-face {
+    font-family: 'Circular';
+    unicode-range: U+F0000-FFFFD;
+    src: url("https://a0.muscache.com/airbnb/static/airbnb-dls-web/build/fonts/airmojix-Regular-1f27af8e7a11d1c944a723d089ced36e.woff2") format("woff2"),url("/airbnb/static/airbnb-dls-web/build/fonts/airmojix-Regular-80e996ff2d0973f4cccb9390f838a6f3.woff") format("woff");
+    font-weight: normal
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+}
+
+form div {
+    margin: 20px 0;
+    align-self: center;
+}
+
+form label {
+    font-weight: bold;
+    font-size: 1.5em;
+    color: #FF5A5F;
+    font-family: 'Circular', sans-serif;
+}
+
+form input {
+    border-radius: 5px;
+    border: 1px solid grey;
+    height: 30px;
+    width: 200px;
+    font-family: 'Circular', sans-serif;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+form input[type='submit'] {
+    align-self: center;
+    margin-bottom: 15px;
+    height: 40px;
+    background-color: #FF5A5F;
+    color:white;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+form input[type='submit'] {
+    cursor: pointer;
+}
+
+
+#user_form {
+    width: 50%;
+    border: 2px solid #e4e4e4;
+    border-radius: 5px;
+    margin:30px auto;
+}
