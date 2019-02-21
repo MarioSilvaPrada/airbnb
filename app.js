@@ -6,6 +6,8 @@ const mongoose = require('mongoose');
 const Location = require('./models/location');
 const Home = require('./models/home');
 
+
+// ROUTES
 const generalPagesRoutes = require('./routes/generalPages');
 const locationRoutes = require('./routes/location');
 const homeRoutes = require('./routes/home');
@@ -14,7 +16,7 @@ app.set('view engine', 'ejs');
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded());
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/airbnbV7');
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/airbnbV11');
 
 mongoose.connection.once('open', function () {
     console.log('Connection has been made...');

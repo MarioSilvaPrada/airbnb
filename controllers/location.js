@@ -4,13 +4,18 @@ const db = require('../utilities/db/db');
 
 const Home = require('../models/home');
 
-const renderLocation = (req, res) => {
+const renderLocation = async (req, res) => {
     let location = req.params.location;
 
-    Location.findOne({ name: location }).populate('houses').then((result) => {
+    let result = await db.getFromDB('location', { name: location }, 'houses');
 
-        res.render('search', { location: location, data: result['houses'], navbar: 'white_navbar', style: 'style.css' });
-    });
+
+    res.render('search', { location: location, data: result[0]['houses'], navbar: 'white_navbar', style: 'style.css' });
+
+    // Location.findOne({ name: location }).populate('houses').then((result) => {
+
+    //     res.render('search', { location: location, data: result['houses'], navbar: 'white_navbar', style: 'style.css' });
+    // });
 }
 
 const getLocation = (req, res) => {
