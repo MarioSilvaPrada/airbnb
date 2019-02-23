@@ -25,3 +25,4 @@ module.exports.getFromDB = async (model, params, populatekey) => {
 
     return documentFound;
 }
+

@@ -1,7 +1,15 @@
-let express = require('express');
+const   express                     =   require("express"),
+        mongoose                    =   require("mongoose"),
+        passport                    =   require("passport"),
+        bodyParser                  =   require("body-parser"),
+        LocalStrategy               =   require("passport-local"),
+        passportLocalMongoose       =   require("passport-local-mongoose"),
+        expressSession              =   require("express-session")
+
+
 let app = express();
-let bodyParser = require('body-parser');
-const mongoose = require('mongoose');
+
+
 
 const Location = require('./models/location');
 const Home = require('./models/home');
@@ -73,7 +81,6 @@ mongoose.connection.once('open', function () {
 //     })
 
 // })
-
 
 
 app.use(generalPagesRoutes);

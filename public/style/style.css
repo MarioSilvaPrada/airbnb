@@ -38,7 +38,7 @@ body{
     border-bottom: 1px solid rgb(228, 228, 228);
 }
 
-.white_navbar svg {
+.white_navbar svg .icon-airbnb  {
     color:rgb(255, 90, 95);
 }
 
@@ -51,9 +51,9 @@ body{
     border-bottom:2px solid #484848;
 }
 
-svg {
+.icon-airbnb {
     color:white;
-    font-size: 2.2em;
+    font-size: 34px;
     padding-left:26px;
     padding-top:25px;
 }
@@ -261,9 +261,13 @@ svg {
     cursor:pointer;
 }
 
-.container__introducing--img svg{
+.container__introducing--img svg .icon {
     align-self: center;
     padding:0;
+}
+
+.icon-airbnb {
+    box-sizing: content-box;
 }
 
 .container__introducing--img button {
@@ -510,6 +514,14 @@ svg {
         overflow-x: overlay;
     }
 
+}
+
+#exampleModal .modal-body {
+    display: flex;
+}
+
+.modal-body input {
+    width: 80%;
 }
 
 @media (max-width: 790px) {
