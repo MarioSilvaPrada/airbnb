@@ -1,29 +1,30 @@
-const   express                     =   require("express"),
-        mongoose                    =   require("mongoose"),
-        passport                    =   require("passport"),
-        bodyParser                  =   require("body-parser"),
-        LocalStrategy               =   require("passport-local"),
-        passportLocalMongoose       =   require("passport-local-mongoose"),
-        expressSession              =   require("express-session")
+const express = require("express"),
+    mongoose = require("mongoose"),
+    passport = require("passport"),
+    bodyParser = require("body-parser"),
+    LocalStrategy = require("passport-local"),
+    passportLocalMongoose = require("passport-local-mongoose"),
+    expressSession = require("express-session")
 
+
+const User = require('./models/user');
 
 let app = express();
 
 
 
-const Location = require('./models/location');
-const Home = require('./models/home');
-
-
 // ROUTES
+const newuser = require('./routes/user');
 const generalPagesRoutes = require('./routes/generalPages');
 const locationRoutes = require('./routes/location');
 const homeRoutes = require('./routes/home');
+
 
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded());
 
+// Airbnb DB
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/airbnbV11');
 
 mongoose.connection.once('open', function () {
@@ -33,6 +34,24 @@ mongoose.connection.once('open', function () {
 }).on('error', function (error) {
     console.log('Connection error:', error);
 });
+
+
+app.use(expressSession({
+
+    secret: "My secret message that should be long and memorable",
+
+    resave: false,
+    saveUninitialized: false
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+passport.use(new LocalStrategy(User.authenticate()));
+
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
 
 // const romeArr = [
 //     {
@@ -82,6 +101,7 @@ mongoose.connection.once('open', function () {
 
 // })
 
+app.use(newuser);
 
 app.use(generalPagesRoutes);
 

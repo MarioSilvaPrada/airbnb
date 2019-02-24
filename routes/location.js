@@ -1,7 +1,7 @@
 let express = require('express');
 const app = express.Router();
 
-const { renderLocation, getLocation, postLocation } = require('../controllers/location');;
+const { renderLocation, getLocation, postLocation } = require('../controllers/location');
 
 // LOCATION PAGE - all page
 
