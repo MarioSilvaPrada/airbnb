@@ -51,8 +51,8 @@
 
 <div class="container">
 
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    <!-- Sign Up Modal -->
+    <div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -68,11 +68,44 @@
                         <label for="password">Password:</label>
                     </div>
                     <div class="inputs">
-                        <input id ="userEmail" type="text" placeholder="E-mail">
-                        <input id = "userPassword" type="password" placeholder="Password">
+                        <input id="userEmail" type="text" placeholder="E-mail">
+                        <input id="userPassword" type="password" placeholder="Password">
                     </div>
+
                 </div>
                 <div class="modal-footer">
+                        <span class='username-error'>Incorrect username or password</span>
+                    <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
+                    <button type="button" class="btn btn-primary" id="sign-up-btn">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Log In Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Sign up</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="label">
+                        <label for="e-mail">E-mail:</label>
+                        <label for="password">Password:</label>
+                    </div>
+                    <div class="inputs">
+                        <input id="userEmail" type="text" placeholder="E-mail">
+                        <input id="userPassword" type="password" placeholder="Password">
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                        <span class='username-error'>Incorrect username or password</span>
                     <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
                     <button type="button" class="btn btn-primary" id="sign-up-btn">Sign Up</button>
                 </div>
@@ -379,13 +412,18 @@
             type: 'POST',
             url: '/newuser',
             dataType: "json",
-            data: { username:email, password: password },
-            success: (data) => {
-                console.log(data);
-            }
+            data: { username: email, password: password },
         })
-            .done( () => console.log('done'))
-            .fail( () => console.log('fail'))
+            .fail((jqXHR, textStatus, error) => {
+                if (jqXHR.status == 401) {
+                    $('.username-error').show();
+                }
+            })
+            .done((data, textStatus, jqXHR) => {
+                if (jqXHR.status == 200) {
+                    window.location.href = '/profile';
+                }
+            })
     });
 
 </script>

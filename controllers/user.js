@@ -7,18 +7,20 @@ const newUser = (req, res) => {
     User.register(new User({ username: data.username }), data.password,
         function (err, user) {
             if (err) {
-                console.log(err);
                 res.status(401).send(err);
             }
-
-            res.send(user);
-
-            // res.render('profile');
+            else {
+                res.send(user);
+            }
         })
+}
 
+
+const login = (req, res) => {
 
 }
 
 module.exports = {
-    newUser: newUser
+    newUser: newUser,
+    login: login
 }
