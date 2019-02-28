@@ -516,7 +516,7 @@ body{
 
 }
 
-#exampleModal .modal-body {
+.modal-body {
     display: flex;
 }
 

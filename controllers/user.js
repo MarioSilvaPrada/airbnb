@@ -16,11 +16,6 @@ const newUser = (req, res) => {
 }
 
 
-const login = (req, res) => {
-
-}
-
 module.exports = {
-    newUser: newUser,
-    login: login
+    newUser: newUser
 }

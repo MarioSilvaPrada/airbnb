@@ -99,15 +99,15 @@
                         <label for="password">Password:</label>
                     </div>
                     <div class="inputs">
-                        <input id="userEmail" type="text" placeholder="E-mail">
-                        <input id="userPassword" type="password" placeholder="Password">
+                        <input id="login-userEmail" type="text" placeholder="E-mail">
+                        <input id="login-userPassword" type="password" placeholder="Password">
                     </div>
 
                 </div>
                 <div class="modal-footer">
                         <span class='username-error'>Incorrect username or password</span>
                     <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
-                    <button type="button" class="btn btn-primary" id="sign-up-btn">Sign Up</button>
+                    <button type="button" class="btn btn-primary" id="log-in-btn">Log in</button>
                 </div>
             </div>
         </div>
@@ -425,6 +425,31 @@
                 }
             })
     });
+
+
+    $('#log-in-btn').on('click', () => {
+        let email = $('#login-userEmail').val();
+        let password = $('#login-userPassword').val();
+
+        $.ajax({
+            type: 'POST',
+            url: '/login',
+            data: { username: email, password: password },
+        })
+            .fail((jqXHR, textStatus, error) => {
+                console.log(error);
+            })
+            .done((data, textStatus, jqXHR) => {
+                window.location.href = '/profile';
+            })
+
+    })
+
+    $('.mainpicture').on('click', () => {
+        let email = $('#userEmail').val('');
+        let password = $('#userPassword').val('');
+        $('.username-error').hide();
+    })
 
 </script>
 

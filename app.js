@@ -18,6 +18,7 @@ const newuser = require('./routes/user');
 const generalPagesRoutes = require('./routes/generalPages');
 const locationRoutes = require('./routes/location');
 const homeRoutes = require('./routes/home');
+const login = require('./routes/login');
 
 
 app.set('view engine', 'ejs');
@@ -102,6 +103,8 @@ passport.deserializeUser(User.deserializeUser());
 // })
 
 app.use(newuser);
+
+app.use(login);
 
 app.use(generalPagesRoutes);
 
