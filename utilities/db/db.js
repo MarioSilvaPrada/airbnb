@@ -14,6 +14,7 @@ module.exports.postToDB = async (model, document) => {
 
 module.exports.getFromDB = async (model, params, populatekey) => {
     const modelFound = await mongoose.model(model);
+
     let documentFound;
 
     if (populatekey) {

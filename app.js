@@ -54,6 +54,13 @@ passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
 
+app.use( (req, res, next) => {
+    res.locals.user = req.user;
+    next();
+});
+
+
+
 // const romeArr = [
 //     {
 //         'main_image': 'https://a0.muscache.com/4ea/air/v2/pictures/c9db035f-7239-4b52-a8fa-b3e8622c8171.jpg?t=r:w1200-h720-sfit,e:fjpg-c90',

@@ -21,7 +21,7 @@ const createRoom = async (req, res) => {
     let room = await db.getFromDB('home', { _id: id });
 
 
-    res.render('home', { navbar: 'white_navbar', data: room[0], style: 'home-style.css' })
+    res.render('home', { navbar: 'white_navbar', data: room[0], style: 'home-style.css', user: req.user })
 
     // Home.findById(id).then((result) => {
     //     console.log(result);
