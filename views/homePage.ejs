@@ -88,7 +88,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Sign up</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Log In</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -437,7 +437,9 @@
             data: { username: email, password: password },
         })
             .fail((jqXHR, textStatus, error) => {
-                console.log(error);
+                if (jqXHR.status == 401) {
+                    $('.username-error').show();
+                }
             })
             .done((data, textStatus, jqXHR) => {
                 window.location.href = '/profile';

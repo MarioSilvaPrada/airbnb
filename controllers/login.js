@@ -1,7 +1,6 @@
 
-
 const loginUser = (req, res) => {
-    res.send('OK');
+    res.send();
 }
 
 
