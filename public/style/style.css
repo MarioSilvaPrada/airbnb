@@ -38,7 +38,7 @@ body{
     border-bottom: 1px solid rgb(228, 228, 228);
 }
 
-.white_navbar svg .icon-airbnb  {
+.white_navbar .icon-airbnb  {
     color:rgb(255, 90, 95);
 }
 
@@ -269,7 +269,7 @@ body{
     cursor:pointer;
 }
 
-.container__introducing--img svg .icon {
+.container__introducing--img svg {
     align-self: center;
     padding:0;
 }

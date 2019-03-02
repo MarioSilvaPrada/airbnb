@@ -9,6 +9,10 @@ const isLoggedIn = (req, res, next) => {
         return next();
     }
 
+    else {
+        return res.send('tens de fazer login oh porco!')
+    }
+
 }
 
 module.exports = {
