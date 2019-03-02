@@ -64,17 +64,19 @@
                 </div>
                 <div class="modal-body">
                     <div class="label">
-                        <label for="e-mail">E-mail:</label>
+                        <label for="user-image">Image Profile:</label><br>
+                        <label for="e-mail">E-mail:</label><br>
                         <label for="password">Password:</label>
                     </div>
                     <div class="inputs">
+                        <input id="user-image" type="text" placeholder="Image URL">
                         <input id="userEmail" type="text" placeholder="E-mail">
                         <input id="userPassword" type="password" placeholder="Password">
                     </div>
 
                 </div>
                 <div class="modal-footer">
-                        <span class='username-error'>Incorrect username or password</span>
+                    <span class='username-error'>Incorrect username or password</span>
                     <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
                     <button type="button" class="btn btn-primary" id="sign-up-btn">Sign Up</button>
                 </div>
@@ -105,7 +107,7 @@
 
                 </div>
                 <div class="modal-footer">
-                        <span class='username-error'>Incorrect username or password</span>
+                    <span class='username-error'>Incorrect username or password</span>
                     <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> -->
                     <button type="button" class="btn btn-primary" id="log-in-btn">Log in</button>
                 </div>
@@ -405,6 +407,7 @@
     });
 
     $('#sign-up-btn').on('click', () => {
+        let userImage = $('#user-image').val()
         let email = $('#userEmail').val();
         let password = $('#userPassword').val();
 
@@ -412,18 +415,18 @@
             type: 'POST',
             url: '/newuser',
             dataType: "json",
-            data: { username: email, password: password },
+            data: { username: email, password: password, userImage: userImage },
         })
+            .done((data) => {
+                window.location.href = '/profile';
+            })
             .fail((jqXHR, textStatus, error) => {
+
                 if (jqXHR.status == 401) {
                     $('.username-error').show();
                 }
             })
-            .done((data, textStatus, jqXHR) => {
-                if (jqXHR.status == 200) {
-                    window.location.href = '/profile';
-                }
-            })
+
     });
 
 

@@ -8,7 +8,11 @@ const HomeSchema = new Schema({
     beds: Number,
     price: Number,
     rating: Number,
-    main_image: String
+    main_image: String,
+    host: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'user'
+    }]
 });
 
 const Home = mongoose.model('home', HomeSchema);

@@ -1,8 +1,8 @@
 const Location = require('../models/location');
+const Home = require('../models/home');
+const User = require('../models/user');
 
 const db = require('../utilities/db/db');
-
-const Home = require('../models/home');
 
 const renderLocation = async (req, res) => {
     let location = req.params.location;
@@ -27,13 +27,16 @@ const postLocation = async (req, res) => {
     let data = req.body;
     let loc = req.params.location;
 
+    // console.log(req.user);
+
     // POST
     let home = await db.postToDB('home', new Home({
         name: data.title,
         beds: data.beds,
         price: data.price,
         rating: 5,
-        main_image: data.url
+        main_image: data.url,
+        host: req.user._id
     }));
 
     // GET

@@ -7,7 +7,7 @@
         <div class="mainpicture__header--nav--link">Help</div>
         <% if (user) {%>
             <div class="mainpicture__header--nav--link">Log out</div>
-            <div class='mainpicture__header--nav--user-image'></div>
+            <div class='mainpicture__header--nav--user-image' style="background-image: url('<%= user.image %>')"  ></div>
         <%} else {%>
             <div data-toggle="modal" data-target="#signupModal" class="mainpicture__header--nav--link">Sign up</div>
             <div data-toggle="modal" data-target="#loginModal" class="mainpicture__header--nav--link">Log in</div>

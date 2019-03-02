@@ -18,10 +18,16 @@ const createHome = async (req, res) => {
 const createRoom = async (req, res) => {
     let id = req.params.id;
 
-    let room = await db.getFromDB('home', { _id: id });
+    let room = await db.getFromDB('home', { _id: id } );
+
+    let ownerRoom = await db.getFromDB('home', { _id: id }, 'host');
+
+    // console.log(room[0])
+    console.log(ownerRoom[0])
 
 
-    res.render('home', { navbar: 'white_navbar', data: room[0], style: 'home-style.css', user: req.user })
+
+    res.render('home', { navbar: 'white_navbar', data: room[0], style: 'home-style.css', owner:ownerRoom[0] })
 
     // Home.findById(id).then((result) => {
     //     console.log(result);

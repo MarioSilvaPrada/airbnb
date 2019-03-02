@@ -8,6 +8,8 @@ const express = require("express"),
 
 
 const User = require('./models/user');
+const Location = require('./models/location');
+const Home = require('./models/home');
 
 let app = express();
 
@@ -23,10 +25,10 @@ const login = require('./routes/login');
 
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
-app.use(bodyParser.urlencoded());
+app.use(bodyParser.urlencoded({ extended: false }));
 
 // Airbnb DB
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/airbnbV11');
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/airbnbV12', {useNewUrlParser: true});
 
 mongoose.connection.once('open', function () {
     console.log('Connection has been made...');
@@ -58,7 +60,6 @@ app.use( (req, res, next) => {
     res.locals.user = req.user;
     next();
 });
-
 
 
 // const romeArr = [
@@ -95,7 +96,7 @@ app.use( (req, res, next) => {
 // let locationHouse = new Location({
 //     name: 'rome',
 //     houses: []
-// });
+// }).save();
 
 // romeArr.forEach((home, i) => {
 

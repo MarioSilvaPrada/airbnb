@@ -581,13 +581,23 @@ svg {
     flex-direction: column;
 }
 
-/* .user-image {
-    border: 2px solid black;
+.user-image {
     width: 60px;
     height: 60px;
     border-radius: 100%;
     align-self: center;
-} */
+    background-size: cover;
+}
+
+.user-name {
+    align-self: center;
+}
+
+.user-info {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
 .content {
     color:#484848;
@@ -653,6 +663,8 @@ svg {
 .rating {
     font-size: 11px;
     color: rgb(0, 132, 137);
+}
 
-
+.icon-airbnb {
+    box-sizing: content-box;
 }
