@@ -21,10 +21,12 @@ const generalPagesRoutes = require('./routes/generalPages');
 const locationRoutes = require('./routes/location');
 const homeRoutes = require('./routes/home');
 const login = require('./routes/login');
+const editHome = require('./routes/editHome');
 
 
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
+app.use(methodOverride("_method"))
 app.use(bodyParser.urlencoded({ extended: false }));
 
 // Airbnb DB
@@ -117,6 +119,8 @@ app.use(login);
 app.use(generalPagesRoutes);
 
 app.use(locationRoutes);
+
+app.use(editHome);
 
 app.use(homeRoutes);
 

@@ -17,9 +17,13 @@
             </div>
 
         </div>
+        <a href="/rooms/<%= data._id %>/edit">
+            <button class="content-edit">Editar</button>
+        </a>
         <div class="container-main--body">
             <p class="content-title"><i class="fas fa-home"></i> Apartamento Inteiro</p>
-            <span>2 hóspedes 1 quarto <%= data.beds == 1 ? '1 cama' :  data.beds + ' camas' %>  1 casa de banho</span><br>
+            <span>2 hóspedes 1 quarto <%= data.beds == 1 ? '1 cama' :  data.beds + ' camas' %> 1 casa de
+                banho</span><br>
             <p class="content-title"><i class="fas fa-medal"></i> Rita é um Superhost</p>
             <span>Superhosts são anfitriões experientes e muito bem avaliados, comprometidos em fornecer estadias
                 excelentes para seus hóspedes.</span><br>
@@ -28,6 +32,7 @@
             <p class="content-title"><i class="fas fa-bell"></i> Self Check-in</p>
             <span>Faça check-in sem problemas com o porteiro.</span>
         </div>
+
     </div>
     <div class="container-aside">
         <div class="check-room">
@@ -37,7 +42,7 @@
             </div>
             <div class='rating'>
                 <% for (let i= 0; i < data.rating; i++) { %>
-                    <span><i class="fas fa-star"></i></span>
+                <span><i class="fas fa-star"></i></span>
                 <% } %>
             </div>
             <form action="">
