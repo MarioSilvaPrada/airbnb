@@ -27,3 +27,13 @@ module.exports.getFromDB = async (model, params, populatekey) => {
     return documentFound;
 }
 
+// UPDATE DB
+
+module.exports.updateDB = async (model, id, document) =>{
+    const modelFound = await mongoose.model(model);
+
+    return modelFound.findByIdAndUpdate(id, document)
+        .then(result => result.save())
+
+}
+

@@ -26,7 +26,6 @@ const editHome = require('./routes/editHome');
 
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
-app.use(methodOverride("_method"))
 app.use(bodyParser.urlencoded({ extended: false }));
 
 // Airbnb DB
