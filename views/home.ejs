@@ -1,6 +1,7 @@
 <% include partials/header.ejs %>
 
 <% include partials/navbar.ejs %>
+<input type="hidden" id="custId" name="custId" value="<%= data._id %>">
 <img src="<%=data.main_image%>" alt="casa" class="location-img">
 
 <div class="container">
@@ -17,9 +18,12 @@
             </div>
 
         </div>
-        <a href="/rooms/<%= data._id %>/edit">
-            <button class="content-edit">Editar</button>
-        </a>
+        <div class="edit-and-delete">
+            <a href="/rooms/<%= data._id %>/edit">
+                <button class="content-edit">Editar</button>
+            </a>
+            <i class="fas fa-trash-alt"></i>
+        </div>
         <div class="container-main--body">
             <p class="content-title"><i class="fas fa-home"></i> Apartamento Inteiro</p>
             <span>2 hóspedes 1 quarto <%= data.beds == 1 ? '1 cama' :  data.beds + ' camas' %> 1 casa de
@@ -77,5 +81,21 @@
 
 <% include partials/footer.ejs %>
 
+<script>
+    $('.fa-trash-alt').on('click', () => {
+        let id = $('#custId').val();
+
+        $.ajax({
+            method: 'DELETE',
+            url: '/rooms/' + id + '/delete'
+        })
+            .done((data) => {
+                window.location.href = '/s/rome/homes';
+            })
+            .fail((jqXHR, textStatus, error) => {
+                console.log('error')
+            })
+    })
+</script>
 
 </html>
