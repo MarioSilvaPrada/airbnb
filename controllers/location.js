@@ -1,6 +1,4 @@
-const Location = require('../models/location');
 const Home = require('../models/home');
-const User = require('../models/user');
 
 const db = require('../utilities/db/db');
 
@@ -31,6 +29,7 @@ const postLocation = async (req, res) => {
 
     // POST
     let home = await db.postToDB('home', new Home({
+        city: data.city,
         name: data.title,
         beds: data.beds,
         price: data.price,

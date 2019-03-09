@@ -1,14 +1,21 @@
+const Homes = require('../models/home');
+const Location = require('../models/location');
+
+
 let express = require('express');
 const app = express.Router();
 
-// const Location = require('../models/location');
-const Homes = require('../models/home');
-
-app.delete('/rooms/:id/delete', (req, res) => {
+app.delete('/rooms/:location/:id/delete', async (req, res) => {
     let id = req.params.id;
+    let city = req.params.location;
 
-    // Homes.findByIdAndRemove(id).then(result => result.save());
-    Homes.findByIdAndRemove(id).then(result => result.save())
+
+    await Homes.findByIdAndRemove(id);
+
+    await Location.findOneAndUpdate(
+        { name: city },
+        { $pull: { houses: id } }
+    );
 
     res.send();
 });
