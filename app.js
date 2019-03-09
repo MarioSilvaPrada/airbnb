@@ -21,6 +21,7 @@ const generalPagesRoutes = require('./routes/generalPages');
 const locationRoutes = require('./routes/location');
 const homeRoutes = require('./routes/home');
 const login = require('./routes/login');
+const logout = require('./routes/logout');
 const editHome = require('./routes/editHome');
 const deleteHome = require('./routes/deleteHome');
 
@@ -115,6 +116,8 @@ app.use( (req, res, next) => {
 app.use(newuser);
 
 app.use(login);
+
+app.use(logout)
 
 app.use(generalPagesRoutes);
 

@@ -450,6 +450,21 @@
 
     })
 
+    $('#user-logout').on('click', () => {
+        $.ajax({
+            type: 'POST',
+            url: '/logout'
+        })
+            .fail((jqXHR, textStatus, error) => {
+                if (jqXHR.status == 401) {
+                    console.log('error')
+                }
+            })
+            .done((data, textStatus, jqXHR) => {
+                window.location.href = '/';
+            })
+    })
+
     $('.mainpicture').on('click', () => {
         let email = $('#userEmail').val('');
         let password = $('#userPassword').val('');
