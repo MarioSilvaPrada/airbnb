@@ -356,18 +356,6 @@ svg {
     font-weight: bold;
 }
 
-.content-edit {
-    margin-top: 8px;
-    background-color: #FF5A5F;
-    color: white;
-    font-size: 16px;
-    font-weight: bold;
-    border-radius: 5px;
-    border: 1px solid #aaa;
-    width: 100px;
-    padding: 5px 8px;
-}
-
 .content-edit:hover {
     cursor: pointer;
 }
@@ -683,4 +671,32 @@ svg {
 
 .icon-airbnb {
     box-sizing: content-box;
+}
+
+.edit-and-delete {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin:15px 0;
+}
+
+.fa-trash-alt {
+
+    font-size: 35px;
+    color: #FF5A5F;
+}
+
+.fa-trash-alt:hover {
+    cursor: pointer;
+}
+
+.content-edit {
+    background-color: #FF5A5F;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+    width: 100px;
+    padding: 5px 8px;
 }
