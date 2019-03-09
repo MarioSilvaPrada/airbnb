@@ -1,8 +1,6 @@
-const Location = require('../models/location');
-const Home = require('../models/home');
-
 
 const db = require('../utilities/db/db');
+const { isLoggedin } = require('../middlewares/auth')
 
 const createHome = async (req, res) => {
     let location = req.params.location;
@@ -24,7 +22,7 @@ const createRoom = async (req, res) => {
     let ownerRoom = await db.getFromDB('user', { _id: room[0]['host'] });
 
 
-    res.render('home', { navbar: 'white_navbar', data: room[0], style: 'home-style.css', owner:ownerRoom[0] })
+    res.render('home', { navbar: 'white_navbar', data: room[0], style: 'home-style.css', owner:ownerRoom[0], user: req.user ? req.user._id : 'null' })
 
     // Home.findById(id).then((result) => {
     //     console.log(result);

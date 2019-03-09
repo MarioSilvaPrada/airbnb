@@ -4,6 +4,7 @@ const Schema = mongoose.Schema;
 // create Home Schema
 
 const HomeSchema = new Schema({
+    city: String,
     name: String,
     beds: Number,
     price: Number,
