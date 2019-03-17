@@ -11,9 +11,11 @@ module.exports.isHomeHost = async(req, res, next) => {
 
     const host = home[0]['host'][0];
 
-    if (host == userLoggedIn) {
+    console.log(userLoggedIn, host)
+
+    if (host.toString() == userLoggedIn.toString()) {
         return next();
     } else {
-        return res.status(401).send(error);
+        return res.status(401).send('error');
     }
 }
